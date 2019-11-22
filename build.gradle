@@ -1,0 +1,66 @@
+apply plugin: 'java'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+eclipse {
+    project.natures 'org.springsource.ide.eclipse.gradle.core.nature'
+    wtp {
+        facet {
+            facet name: 'jst.web', version: '3.1'
+            facet name: 'jst.java', version: '1.8'
+        }
+    }
+}
+
+group = 'wcyoung'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+    jcenter()
+}
+
+def version = [
+    servletAPI: '3.1.0',
+    slf4j: '1.7.25',
+    logback: '1.2.3',
+    spring: '4.3.15.RELEASE',
+    aspectj: '1.8.13',
+    commonsLang: '3.7',
+    commonsCollections: '3.2.2',
+    junit: '4.12'
+]
+
+// TODO dependencies update
+dependencies {
+    providedCompile "javax.servlet:javax.servlet-api:${version.servletAPI}"
+
+    compile "org.slf4j:slf4j-api:${version.slf4j}"
+    compile "ch.qos.logback:logback-classic:${version.logback}"
+
+    compile "org.springframework:spring-webmvc:${version.spring}"
+
+    compile "org.aspectj:aspectjweaver:${version.aspectj}"
+
+    compile "org.apache.commons:commons-lang3:${version.commonsLang}"
+    compile "commons-collections:commons-collections:${version.commonsCollections}"
+
+    testCompile "junit:junit:${version.junit}"
+}
+
+test {
+    systemProperties 'property': 'value'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}
