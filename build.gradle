@@ -29,10 +29,7 @@ def version = [
     servletApi: '3.1.0',
     slf4j: '1.7.29',
     logback: '1.2.3',
-    taglibs: '1.2.5',
-    jstl: '1.2',
     spring: '4.3.25.RELEASE',
-    aspectj: '1.9.4',
     jacksonDatabind: '2.10.1',
     commonsLang: '3.9',
     junit: '5.5.2'
@@ -44,12 +41,8 @@ dependencies {
     implementation group: "org.slf4j", name:"slf4j-api", version:"${version.slf4j}"
     implementation group: "ch.qos.logback", name:"logback-classic", version:"${version.logback}"
 
-    implementation group: "org.apache.taglibs", name: "taglibs-standard-impl", version: "${version.taglibs}"
-    implementation group: "javax.servlet.jsp.jstl", name: "jstl", version: "${version.jstl}"
-
     implementation group: "org.springframework", name: "spring-webmvc", version: "${version.spring}"
 
-    implementation group: "org.aspectj", name: "aspectjweaver", version: "${version.aspectj}"
     implementation group: "com.fasterxml.jackson.core", name: "jackson-core", version: "${version.jacksonDatabind}"
     implementation group: "com.fasterxml.jackson.core", name: "jackson-databind", version: "${version.jacksonDatabind}"
 
