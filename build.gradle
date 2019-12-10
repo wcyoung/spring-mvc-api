@@ -22,6 +22,8 @@ def libVer = [
     servletApi: '3.1.0',
     jacksonDatabind: '2.10.1',
     aspectj: '1.9.5',
+    mybatis:'3.5.3',
+    mybatisSpring: '2.0.3',
     spring: '4.3.25.RELEASE',
     logback: '1.2.3',
     commonsLang: '3.9',
@@ -35,6 +37,9 @@ dependencies {
     implementation group: "com.fasterxml.jackson.core", name: "jackson-core", version: "${libVer.jacksonDatabind}"
     implementation group: "com.fasterxml.jackson.core", name: "jackson-databind", version: "${libVer.jacksonDatabind}"
     implementation group: "org.aspectj", name: "aspectjweaver", version: "${libVer.aspectj}"
+    implementation group: "org.mybatis", name: "mybatis", version: "${libVer.mybatis}"
+    implementation group: "org.mybatis", name: "mybatis-spring", version: "${libVer.mybatisSpring}"
+    implementation group: "org.springframework", name: "spring-jdbc", version: "${libVer.spring}"
     implementation group: "org.springframework", name: "spring-webmvc", version: "${libVer.spring}"
 
     implementation group: "ch.qos.logback", name: "logback-classic", version: "${libVer.logback}"
