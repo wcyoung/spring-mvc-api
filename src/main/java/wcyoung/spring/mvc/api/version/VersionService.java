@@ -20,11 +20,14 @@ public class VersionService extends BaseService {
     @Resource
     private SpringMvcMapper springMvcMapper;
 
-    public String getVersionInfo() throws IOException {
+    public String getManifestVersion() throws IOException {
         Properties properties = new Properties();
         properties.load(resourceLoader.getResource("/META-INF/MANIFEST.MF").getInputStream());
-        log.info("{}", springMvcMapper.selectNow());
         return properties.getProperty("Implementation-Version");
+    }
+
+    public String selectDbVersion() {
+        return springMvcMapper.selectDbVersion();
     }
 
 }
