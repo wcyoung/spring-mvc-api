@@ -12,7 +12,7 @@
       default-autowire="byName">
 
   <context:component-scan base-package="wcyoung.spring.mvc.api" use-default-filters="false">
-    <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.RestController"/>
   </context:component-scan>
 
   <mvc:annotation-driven>
